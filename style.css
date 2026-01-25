@@ -61,6 +61,11 @@ header {
     color: #080804;
 }
 
+.gramas {
+    font-size: 15px;
+}
+
+
 footer {
     background-color: #3F4021;
     color: white;
