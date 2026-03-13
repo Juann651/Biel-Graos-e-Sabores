@@ -7,163 +7,417 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imagens/biel graos e sabores.png">
 </head>
-<body>
+<body id="topo">
     <header>
         <img src="imagens/biel graos e sabores.png" alt="biel graos e sabores" style="height: 125px;">
     </header>
+
+    <nav>
+        <a href="#temperos">Temperos</a>
+        <a href="#snacks">Snacks</a>
+    </nav>
+
     <br>
     <br>
-    <h1>TEMPEROS</h1>
+    <div class="barra-pesquisa">
+        <input type="text" id="pesquisa" placeholder="🔎 Buscar produto...">
+    </div>
+    <p id="resultado"></p>
+    <h1 id="temperos">Temperos</h1>
     <main class="catalogo">
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>É um tempero versátil, ideal para realçar o sabor de frango,
+                        caldos, ensopados e outros pratos.</strong>
+                    </p>
+                </div>
+            </details>
+
             <img src="imagens/Colorau.jpg">
             <h2>Colorau</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Cor intensa natural</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">100g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Mistura exclusiva de temperos que realça o sabor dos seus pratos, 
+                        trazendo praticidade e um toque caseiro irresistível à sua cozinha</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Edu guedes.webp">
             <h2>Edu Guedes</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Sabor caseiro elegante</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">65g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Mistura tradicional de temperos que valoriza o sabor dos seus pratos, 
+                        garantindo praticidade e aquele toque caseiro que todos adoram</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Ana maria.webp">
             <h2>Ana Maria</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Tempero tradicional brasileiro</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">65g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Combinação cítrica e picante que realça o sabor dos pratos, 
+                        trazendo frescor e um toque sofisticado à sua cozinha</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Lemon pepper.avif">
             <h2>Lemon Pepper</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Toque limão apimentado</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">80g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Tempero com sabor defumado intenso que adiciona cor e personalidade aos seus pratos, 
+                        deixando cada receita irresistivelmente aromática</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Paprica Defumada.png">
             <h2>Páprica Defumada</h2>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Toque defumado especial</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">100g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Tempero suave e adocicado que realça a cor e o sabor dos pratos, 
+                        trazendo delicadeza e aroma irresistível à sua cozinha</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Paprica Doce.webp">
             <h2>Páprica Doce</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Doçura natural equilibrada</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">100g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Mistura equilibrada de especiarias que valoriza todos os sabores dos seus pratos, 
+                        garantindo praticidade e sabor caseiro em cada refeição</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Tempero Completo.webp">
             <h2>Tempero Completo</h2>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Mistura completo equilibrada</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">65g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Mistura de ervas e especiarias que oferece sabor intenso e fresco, 
+                        perfeita para temperar carnes, grelhados e realçar qualquer prato com 
+                        toque argentino autêntico</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Chimichurri.png">
             <h2>Chimichurri</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Ervas frescas marcantes</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">65g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Realçador de sabor que intensifica o gosto natural dos alimentos, 
+                        trazendo um toque delicioso e equilibrado a todos os pratos</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Ajinomoto.webp">
             <h2>Ajinomoto</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Realce gostoso imediato</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">100g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Erva aromática que adiciona sabor mediterrâneo autêntico aos pratos, 
+                        trazendo frescor e um toque especial à sua culinária</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Oregano.webp">
             <h2>Orégano</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Essência natural marcante</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">20g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Mistura especial de temperos que realça o sabor do feijão</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Tempero para feijao.webp">
             <h2>Tempero para Feijão</h2>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Tempero clássico diário</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">65g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>istura de temperos frescos que adiciona aroma e sabor irresistível aos pratos, 
+                        trazendo praticidade e aquele toque caseiro especial</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/cebola, salsa e alho.webp">
             <h2>Cebola, Salsa e Alho</h2>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Toque culinário especial</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">50g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>empero de cor vibrante e sabor marcante que valoriza seus pratos, 
+                        trazendo um toque exótico e sofisticado à sua culinária</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/açafrao.webp">
             <h2>Açafrão</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Cor vibrante natural</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">80g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Mistura cítrica e aromática que realça saladas e pratos leves, 
+                        trazendo frescor, sabor equilibrado e praticidade à sua cozinha</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/vinagrete tempero.webp">
             <h2>Tempero Vinagrete</h2>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Toque refrescante caseiro</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">50g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Tempero irresistível que combina aromas e sabores marcantes, 
+                        deixando seus pratos deliciosos e irresistíveis para toda a família</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/Pega marido.webp">
             <h2>Pega Marido</h2>
-            <br>
-            <p class="preco">R$ 6,99</p>
+            <p class="descricao">Mistura especial envolvente</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">65g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 6,99</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
     </main>
     <br>
     <br>
-    <h1>SNACKS</h1>
-    <main class="catalogo2">
+    <h1 id="snacks">Snacks</h1>
+    <main class="catalogo">
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Combinação prática de vegetais desidratados que adiciona sabor, 
+                        aroma e cor aos seus pratos, trazendo nutrição e praticidade à sua cozinha</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/mix de vegetais desidratados.png">
             <h2>Mix de Vegetais Desidratados</h2>
-            <p class="preco">R$ 23,00</p>
+            <p class="descricao">Essência nutritiva saborosa</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">160g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 23,00</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
 
         <div class="produto">
+            <details class="menu-produto">
+                <summary>⋮</summary>
+                <div class="info-produto">
+                    <p><strong>Deliciosas fatias de banana crocantes e naturais, 
+                        perfeitas para lanches saudáveis e saborosos a qualquer hora do dia</strong>
+                    </p>
+                </div>
+            </details>
+            
             <img src="imagens/banana chips.png">
             <h2>Banana Chips</h2>
-            <br>
-            <p class="preco">R$ 16,50</p>
+            <p class="descricao">Sabor tropical irresistível</p>
+            <div class="estrelas">★★★★★</div>
             <p class="gramas">150g</p>
-            <a href="https://wa.me/5527998177162" target="_blank" class="btn-comprar">Comprar</a>
+            <p class="preco">R$ 16,50</p>
+            <div class="controle-produto">
+                <button class="menos-produto">-</button>
+                <span class="qtd">0</span>
+                <button class="mais-produto">+</button>
+            </div>
         </div>
     </main>
 
@@ -179,5 +433,23 @@
         <img src="imagens/instagram.png" width="80px">
     </a>
 
+    <div class="icone-carrinho" id="abrirCarrinho">
+        🛒 <span id="contador">0</span>
+    </div>
+
+    <div class="carrinho-box" id="carrinhoBox">
+        <h3>Seu Carrinho</h3>
+        <div id="listaCarrinho"></div>
+
+        <p id="totalCarrinho">Total: R$ 0</p>
+        <br>
+        <button id="finalizar">Finalizar no WhatsApp</button>
+    </div>
+
+    <div id="toast">Produto adicionado ao carrinho</div>
+
+    <a href="#topo" class="topo">↑ Topo</a>
+
+    <script src="script.js"></script>
 </body>
 </html>
