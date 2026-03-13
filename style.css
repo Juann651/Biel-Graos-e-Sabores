@@ -307,6 +307,10 @@ h1::after {
     cursor:pointer;    
 }
 
+#finalizar:hover {
+    background: #262712;
+}
+
 .icone-carrinho{
     position:fixed;
     top:45px;
@@ -335,6 +339,23 @@ h1::after {
 
 .carrinho-box.ativo{
     right:0;
+}
+
+.carrinho-box button{
+    background:#3F4021;
+    color:white;
+    border:none;
+    padding:4px 6px;
+    margin:4px;
+    border-radius:6px;
+    font-size:10px;
+    font-weight:bold;
+    cursor:pointer;
+    min-width:20px;
+}
+
+.carrinho-box button:hover{
+    background:#262712;
 }
 
 #listaCarrinho div{
