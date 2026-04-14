@@ -68,7 +68,7 @@ header {
 }
 
 .produto:hover {
-    transform: scale(-6px);
+    transform: translateY(-6px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -333,7 +333,7 @@ h1::after {
     box-shadow:-5px 0 15px rgba(0,0,0,0.2);
     padding:20px;
     transition:0.3s;
-    z-index:2000;
+    z-index:10000;
     overflow-y:auto;
 }
 
@@ -406,6 +406,16 @@ h1::after {
     .carrinho-box{
     width:230px;
     }
+
+    /* Seletor de gramas menor em mobile */
+    .seletor-gramas {
+        gap: 4px;
+    }
+
+    .btn-grama {
+        font-size: 11px !important;
+        padding: 4px 8px !important;
+    }
 }
 
 #toast{
@@ -449,4 +459,39 @@ h1::after {
 .controle-produto span{
     font-weight:bold;
     font-size:16px;
+}
+
+/* =======================
+   SELETOR DE GRAMAGEM
+   ======================= */
+
+.seletor-gramas {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0 4px;
+}
+
+.btn-grama {
+    background: #fff;
+    color: #3F4021;
+    border: 2px solid #696b3a;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.btn-grama:hover {
+    background: #696b3a;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.btn-grama.ativo {
+    background: #3F4021;
+    color: #fff;
+    border-color: #3F4021;
 }

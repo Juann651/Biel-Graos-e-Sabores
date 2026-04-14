@@ -29,6 +29,50 @@ input.addEventListener("input", () => {
 
 
 // =======================
+// SELETOR DE GRAMAGEM (Farinhas Energéticas)
+// =======================
+
+document.querySelectorAll(".seletor-gramas").forEach(seletor => {
+
+    const botoes = seletor.querySelectorAll(".btn-grama");
+    const produto = seletor.closest(".produto");
+    const precoEl = produto.querySelector(".preco");
+    const gramasEl = produto.querySelector(".gramas");
+
+    botoes.forEach(botao => {
+
+        botao.addEventListener("click", () => {
+
+            // Remove classe ativo de todos os botões do seletor
+            botoes.forEach(b => b.classList.remove("ativo"));
+            botao.classList.add("ativo");
+
+            const grama = parseInt(botao.dataset.grama);
+            const preco100 = parseFloat(botao.dataset.preco);
+
+            // Calcula preço proporcional
+            const novoPreco = grama === 100 ? preco100 : (preco100 / 2);
+
+            // Atualiza exibição
+            gramasEl.textContent = grama + "g";
+            precoEl.textContent = "R$ " + novoPreco.toFixed(2).replace(".", ",");
+
+            // Ao trocar gramagem, atualiza o contador do produto
+            // para refletir a quantidade já no carrinho dessa gramagem
+            const nomeBase = produto.querySelector("h2").innerText;
+            const nomeSelecionado = `${nomeBase} (${grama}g)`;
+            const itemExistente = carrinho.find(i => i.nome === nomeSelecionado);
+            produto.querySelector(".qtd").innerText = itemExistente ? itemExistente.quantidade : 0;
+
+            atualizarCarrinho();
+        });
+
+    });
+
+});
+
+
+// =======================
 // CARRINHO (COM PERSISTÊNCIA)
 // =======================
 
@@ -49,13 +93,13 @@ function atualizarCarrinho(){
 
     let total = 0;
 
-    carrinho.forEach((item,index) => {
+    carrinho.forEach((item, index) => {
 
         const div = document.createElement("div");
 
         div.innerHTML = `
         ${item.nome} <br>
-        R$ ${item.preco.toFixed(2)} <br>
+        R$ ${item.preco.toFixed(2).replace(".", ",")} <br>
         <button class="menos" data-index="${index}">-</button>
         ${item.quantidade}
         <button class="mais" data-index="${index}">+</button>
@@ -67,9 +111,9 @@ function atualizarCarrinho(){
 
     });
 
-    totalCarrinho.innerText = "Total: R$ " + total.toFixed(2);
+    totalCarrinho.innerText = "Total: R$ " + total.toFixed(2).replace(".", ",");
 
-    contador.innerText = carrinho.reduce((soma,item)=> soma + item.quantidade,0);
+    contador.innerText = carrinho.reduce((soma, item) => soma + item.quantidade, 0);
 
     ativarBotoesCarrinho();
 
@@ -84,9 +128,9 @@ function atualizarCarrinho(){
 
 function ativarBotoesCarrinho(){
 
-    document.querySelectorAll(".mais").forEach(botao=>{
+    document.querySelectorAll(".mais").forEach(botao => {
 
-        botao.addEventListener("click",()=>{
+        botao.addEventListener("click", () => {
 
             const index = botao.dataset.index;
 
@@ -100,9 +144,9 @@ function ativarBotoesCarrinho(){
 
     });
 
-    document.querySelectorAll(".menos").forEach(botao=>{
+    document.querySelectorAll(".menos").forEach(botao => {
 
-        botao.addEventListener("click",()=>{
+        botao.addEventListener("click", () => {
 
             const index = botao.dataset.index;
 
@@ -112,7 +156,7 @@ function ativarBotoesCarrinho(){
 
                 mostrarMensagem("Produto removido do carrinho");
 
-                carrinho.splice(index,1);
+                carrinho.splice(index, 1);
 
             }else{
 
@@ -130,23 +174,41 @@ function ativarBotoesCarrinho(){
 
 
 // =======================
+// HELPER: obter nome do produto com gramagem (se tiver seletor)
+// =======================
+
+function obterNomeProduto(produto) {
+    const nomeBase = produto.querySelector("h2").innerText;
+    const seletor = produto.querySelector(".seletor-gramas");
+
+    if (seletor) {
+        const botaoAtivo = seletor.querySelector(".btn-grama.ativo");
+        const grama = botaoAtivo ? botaoAtivo.dataset.grama : "100";
+        return `${nomeBase} (${grama}g)`;
+    }
+
+    return nomeBase;
+}
+
+
+// =======================
 // + E - NOS PRODUTOS
 // =======================
 
 const maisProdutos = document.querySelectorAll(".mais-produto");
 const menosProdutos = document.querySelectorAll(".menos-produto");
 
-maisProdutos.forEach(botao=>{
+maisProdutos.forEach(botao => {
 
-    botao.addEventListener("click",()=>{
+    botao.addEventListener("click", () => {
 
         const produto = botao.closest(".produto");
 
-        const nome = produto.querySelector("h2").innerText;
+        const nome = obterNomeProduto(produto);
         const precoTexto = produto.querySelector(".preco").innerText;
         const qtdSpan = produto.querySelector(".qtd");
 
-        const preco = parseFloat(precoTexto.replace("R$", "").replace(",", "."));
+        const preco = parseFloat(precoTexto.replace("R$", "").trim().replace(",", "."));
 
         let item = carrinho.find(i => i.nome === nome);
 
@@ -162,7 +224,7 @@ maisProdutos.forEach(botao=>{
             carrinho.push({
                 nome,
                 preco,
-                quantidade:1
+                quantidade: 1
             });
 
             qtdSpan.innerText = 1;
@@ -176,13 +238,13 @@ maisProdutos.forEach(botao=>{
 });
 
 
-menosProdutos.forEach(botao=>{
+menosProdutos.forEach(botao => {
 
-    botao.addEventListener("click",()=>{
+    botao.addEventListener("click", () => {
 
         const produto = botao.closest(".produto");
 
-        const nome = produto.querySelector("h2").innerText;
+        const nome = obterNomeProduto(produto);
         const qtdSpan = produto.querySelector(".qtd");
 
         let item = carrinho.find(i => i.nome === nome);
@@ -224,7 +286,7 @@ if(carrinho.length > 0){
 
         document.querySelectorAll(".produto").forEach(produto => {
 
-            const nome = produto.querySelector("h2").innerText;
+            const nome = obterNomeProduto(produto);
 
             if(nome === item.nome){
                 produto.querySelector(".qtd").innerText = item.quantidade;
@@ -256,13 +318,13 @@ finalizar.addEventListener("click", () => {
 
     carrinho.forEach(item => {
 
-        mensagem += `- ${item.nome} (${item.quantidade}x) - R$ ${(item.preco * item.quantidade).toFixed(2)}%0A`;
+        mensagem += `- ${item.nome} (${item.quantidade}x) - R$ ${(item.preco * item.quantidade).toFixed(2).replace(".", ",")}%0A`;
 
         total += item.preco * item.quantidade;
 
     });
 
-    mensagem += `%0A Total: R$ ${total.toFixed(2)}`;
+    mensagem += `%0A Total: R$ ${total.toFixed(2).replace(".", ",")}`;
 
     const telefone = "5527998177162";
 
@@ -305,7 +367,7 @@ document.addEventListener("click", (evento) => {
 
 // IMPEDIR FECHAR AO CLICAR DENTRO
 
-carrinhoBox.addEventListener("click", (e)=>{
+carrinhoBox.addEventListener("click", (e) => {
     e.stopPropagation();
 });
 
@@ -324,5 +386,5 @@ function mostrarMensagem(texto){
 
     setTimeout(() => {
         toast.classList.remove("mostrar");
-    },2000);
+    }, 2000);
 }
